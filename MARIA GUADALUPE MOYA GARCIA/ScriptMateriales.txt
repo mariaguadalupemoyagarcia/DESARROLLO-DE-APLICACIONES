@@ -1,0 +1,16 @@
+
+CREATE TABLE public.materiales
+(
+  id_material integer NOT NULL DEFAULT nextval('materiales_id_material_seq'::regclass),
+  nombre character varying(20),
+  precio double precision,
+  comision double precision,
+  existencia_min integer,
+  existencia_max integer,
+  CONSTRAINT materiales_pkey PRIMARY KEY (id_material)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.materiales
+  OWNER TO postgres;
